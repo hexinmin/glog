@@ -32,15 +32,6 @@ import (
 
 // MaxSize is the maximum size of a log file in bytes.
 var MaxSize uint64 = 1024 * 1024 * 1800
-type RotateTimeGap int  
-const (
-	_ RotateTimeGap = iota
-	RotateTimeGapMonth
-	RotateTimeGapDay
-	RotateTimeGapHour
-	RotateTimeGapMinute
-)
-var RotateGap =  RotateTimeGapDay
 
 // logDirs lists the candidate directories for new log files.
 var logDirs []string
