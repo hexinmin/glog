@@ -41,7 +41,7 @@ var logDirs []string
 var logDir = flag.String("log_dir", "", "If non-empty, write log files in this directory")
 
 var LogRotateInterval = flag.String("rotate_interval", "day",
-	"Set the rolling log intervals to be months, days, hours, and minutes, and Values correspond to 'month', 'day', 'hour', 'minute' respectively")
+	"Set the rolling log intervals to be months, days, hours, and minutes, and values correspond to 'month', 'day', 'hour', 'minute' respectively")
 
 func createLogDirs() {
 	if *logDir != "" {
