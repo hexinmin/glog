@@ -419,14 +419,14 @@ type flushSyncWriter interface {
 }
 
 func init() {
-	flag.BoolVar(&logging.toStderr, "logtostderr", false, "log to standard error instead of files")
-	flag.BoolVar(&logging.alsoToStderr, "alsologtostderr", false, "log to standard error as well as files")
-	flag.Var(&logging.verbosity, "v", "log level for V logs")
-	flag.Var(&logging.stderrThreshold, "stderrthreshold", "logs at or above this threshold go to stderr")
-	flag.Var(&logging.vmodule, "vmodule", "comma-separated list of pattern=N settings for file-filtered logging")
-	flag.Var(&logging.traceLocation, "log_backtrace_at", "when logging hits line file:N, emit a stack trace")
-	flag.DurationVar(&logging.flushInterval, "flush_interval", defaultFlushInterval, "how often flush file")
-	flag.IntVar(&logging.maxLogMessageLen, "maxlogmessagelen", -1, "when logging a very long log message, this value greater than 64 it will be truncate")
+	flag.BoolVar(&logging.toStderr, "glogtostderr", false, "log to standard error instead of files")
+	flag.BoolVar(&logging.alsoToStderr, "galsologtostderr", false, "log to standard error as well as files")
+	flag.Var(&logging.verbosity, "gv", "log level for V logs")
+	flag.Var(&logging.stderrThreshold, "gstderrthreshold", "logs at or above this threshold go to stderr")
+	flag.Var(&logging.vmodule, "gvmodule", "comma-separated list of pattern=N settings for file-filtered logging")
+	flag.Var(&logging.traceLocation, "glog_backtrace_at", "when logging hits line file:N, emit a stack trace")
+	flag.DurationVar(&logging.flushInterval, "gflush_interval", defaultFlushInterval, "how often flush file")
+	flag.IntVar(&logging.maxLogMessageLen, "gmaxlogmessagelen", -1, "when logging a very long log message, this value greater than 64 it will be truncate")
 
 	// Default stderrThreshold is ERROR.
 	logging.stderrThreshold = errorLog
