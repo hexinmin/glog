@@ -419,6 +419,7 @@ type flushSyncWriter interface {
 }
 
 func init() {
+	
 	flag.BoolVar(&logging.toStderr, "glogtostderr", false, "log to standard error instead of files")
 	flag.BoolVar(&logging.alsoToStderr, "galsologtostderr", false, "log to standard error as well as files")
 	flag.Var(&logging.verbosity, "gv", "log level for V logs")
