@@ -1199,7 +1199,7 @@ func (sb *syncBuffer) Write(p []byte) (n int, err error) {
 // shouldRotateFile check whether should rotate file
 func (sb *syncBuffer) shouldRotateFile(l uint64) bool {
 	return sb.nbytes+l >= MaxSize ||
-		time.Now().Before(sb.nextRotateTime) == false
+		!time.Now().Before(sb.nextRotateTime)
 }
 
 // rotateFile closes the syncBuffer's file and starts a new one.
